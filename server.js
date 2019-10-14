@@ -25,24 +25,8 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "public/main.html"));
 });
 
-app.get("api/collections",function(req, res) {
-    //TODO: Display all collections;
-});
-
-app.get("/api/category/:collection_id", function(req, res) {
-    var chosen = req.params.collection_id;
-    //TODO: Display all collections of certain category;
-});
-
-app.get("/api/user/:collection_id", function(req, res) {
-    var chosen = req.params.collection_id;    
-    //TODO: Display all collections of certain user;
-});
-
-app.get("/api/keyword/:character", function(req, res) {
-    //TODO: Display all collections whose title includes keyword;
-});
-
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes-al.js")(app);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function () {
