@@ -19,6 +19,29 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get("/", function(req, res) {
+    // res.send("Welcome to the Star Wars Page!")
+    res.sendFile(path.join(__dirname, "public/main.html"));
+});
+
+app.get("api/collections",function(req, res) {
+    //TODO: Display all collections;
+});
+
+app.get("/api/category/:character", function(req, res) {
+    //TODO: Display all collections of certain category;
+});
+
+app.get("/api/user/:character", function(req, res) {
+    //TODO: Display all collections of certain user;
+});
+
+app.get("/api/keyword/:character", function(req, res) {
+    //TODO: Display all collections whose title includes keyword;
+});
+
+
+
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function () {
     app.listen(PORT, function () {
