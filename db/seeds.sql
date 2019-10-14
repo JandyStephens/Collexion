@@ -16,4 +16,4 @@ INSERT INTO categories(name) VALUES ('others');
 
 
 INSERT INTO collections(title,post_time,image1_url,description,user_id,category_id)
-VALUES ('iphone11','2019/10/11','N/A','Nothing special',1,)
+VALUES ('iphone11','2019/10/11','N/A','Nothing special',1,4);
