@@ -1,7 +1,9 @@
 //TODO: INPUT THE DATA FROM DATA
 
+
+
 module.exports = function (app) {
-    app.get("api/collections", function (req, res) {
+    app.get("/api/collections", function (req, res) {
         //TODO: Display all collections;
     });
 
@@ -15,7 +17,8 @@ module.exports = function (app) {
         //TODO: Display all collections of certain user;
     });
 
-    app.get("/api/keyword/:character", function (req, res) {
+    app.get("/api/keyword/:keyword", function (req, res) {
+        var keyword = req.params.keyword;
         //TODO: Display all collections whose title includes keyword;
     });
 }
