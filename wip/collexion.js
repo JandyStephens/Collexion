@@ -11,6 +11,7 @@ var Item = sequelize.define("item", {
     },
     description: Sequelize.TEXT,
     quantity: Sequelize.INT,
+    //TODO:need foreign key join for the IDs...
     user_id: Sequelize.INT,
     cat_id: Sequelize.INT
 });

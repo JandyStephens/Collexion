@@ -5,6 +5,13 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+var router = express.Router();
+var Sequelize = require("sequelize");
+var env = process.env.NODE_ENV || "development";
+var config = require("./config/config.json")[env]
+
+// console.log(config);
+
 
 // Sets up the Express App
 // =============================================================
@@ -18,6 +25,11 @@ var db = require("./models");
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Static directory
+app.use(express.static("public"));
+
+require("./routes/collector-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function () {
