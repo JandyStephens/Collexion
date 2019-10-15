@@ -1,24 +1,20 @@
-// Dependencies
-// =============================================================
 
-// This may be confusing but here Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+module.exports = function (sequelize, DataTypes) {
+    var Categories = sequelize.define("Categories", {
+        name: {
+            type: DataTypes.STRING,
+            unique: true
+        },
+        password: DataTypes.STRING
+    });
 
-// Creates a "Chirp" model that matches up with DB
-var Categories = sequelize.define("users", {
-    category_name: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    image_url:{
-        type: Sequelize.STRING,
-        allowNull: false
-    }
-});
 
-// Syncs with DB
-Categories.sync();
-
-module.exports = Categories;
+    // Categories.associate = function (models) {
+    //     //Assoc. Collextor with Collextion. When Collextor deleted, also delete associated Collexions.
+    //     Collector.hasMany(models.Collexion, {
+    //         onDelete: "cascade"
+    //     });
+    //     // Collextor.belongsToMany( )
+    // };
+    return Categories;
+};
