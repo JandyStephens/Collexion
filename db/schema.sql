@@ -37,3 +37,4 @@ CREATE TABLE collections(
     category_id INT NOT NULL,
     PRIMARY KEY(id)
 )
+
