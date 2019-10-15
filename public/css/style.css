@@ -838,10 +838,12 @@
 
 	.wrapper {
 		padding: 6em 0 4em 0;
+		box-shadow: rgb(0, 0, 0);
+
 	}
 
 		.wrapper.style1 {
-			background: #fff;
+			background: rgb(0, 0, 0);
 			color: #555f66;
 		}
 
@@ -978,11 +980,11 @@
 
 	#banner {
 		background-color: #666666;
-		background-image: url("../images/banner.jpg");
+		background-image: url("../images/honeycombmainpage.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
-		color: #d8d8d8;
+		color: #ffffff;
 		padding: 14em 0;
 		text-align: center;
 		position: relative;
@@ -1085,8 +1087,6 @@
 		#footer .icons a {
 			color: #bbb;
 		}
-<<<<<<< HEAD
-=======
 /* Fonts pasted in from rachel for user profile */
 
 @font-face {
@@ -1195,7 +1195,7 @@ a {
   height: auto;
   width: 70%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 30px auto;
   border-radius: 50%;
   background: #FFFFFF;
 }
@@ -1253,6 +1253,7 @@ a {
   padding: 10px 0 0 6%;
   background: #FFFFFF;
   text-align: center;
+  margin: 30px;
 }
 
 #slide-over {
@@ -1659,11 +1660,12 @@ label {
     position: relative;
     height: auto;
     width: 100%;
-    padding: 0;
+	padding: 30px;
+	margin-top: 50px;
   }
 
   #title h1 {
-    margin: 10px 0;
+    margin: 30px 0;
   }
 
   #contact {
@@ -1699,4 +1701,3 @@ label {
   #contact input[type="text"], #contact textarea {
     width: 80%;
   }
->>>>>>> c997a45d9e391152fd32cd605120a87d47a1f6cf
