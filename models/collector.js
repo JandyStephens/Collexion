@@ -6,6 +6,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             unique: true
         },
+        email: DataTypes.STRING,
         password: DataTypes.STRING
     });
 
