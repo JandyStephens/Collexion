@@ -1085,6 +1085,8 @@
 		#footer .icons a {
 			color: #bbb;
 		}
+<<<<<<< HEAD
+=======
 /* Fonts pasted in from rachel for user profile */
 
 @font-face {
@@ -1697,3 +1699,4 @@ label {
   #contact input[type="text"], #contact textarea {
     width: 80%;
   }
+>>>>>>> c997a45d9e391152fd32cd605120a87d47a1f6cf
