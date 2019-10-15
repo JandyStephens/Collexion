@@ -2,11 +2,24 @@ const bcrypt = require("bcrypt");
 
 module.exports = function (sequelize, DataTypes) {
     var Collector = sequelize.define("Collector", {
-        name: {
+        username: {
             type: DataTypes.STRING,
-            unique: true
+            allowNull: false
         },
-        password: DataTypes.STRING
+    
+        password:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+    
+        image_url:{
+            type: DataTypes.STRING,
+            allowNull: false 
+        },
+    
+        gender: DataTypes.ENUM('male','female'),
+    
+        description: DataTypes.TEXT
     });
 
 
