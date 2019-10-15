@@ -1,11 +1,8 @@
 
 module.exports = function (sequelize, DataTypes) {
     var Categories = sequelize.define("Categories", {
-        name: {
-            type: DataTypes.STRING,
-            unique: true
-        },
-        password: DataTypes.STRING
+
+
     });
 
 
