@@ -1,13 +1,16 @@
-
 module.exports = function (sequelize, DataTypes) {
-    var Categories = sequelize.define("Categories", {
-        name: {
+    var Category = sequelize.define("Category", {
+        category_name: {
             type: DataTypes.STRING,
-            unique: true
+            allowNull: false
         },
-        password: DataTypes.STRING
+        image_url: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
     });
-
+    return Category;
+};
 
     // Categories.associate = function (models) {
     //     //Assoc. Collextor with Collextion. When Collextor deleted, also delete associated Collexions.
@@ -16,5 +19,3 @@ module.exports = function (sequelize, DataTypes) {
     //     });
     //     // Collextor.belongsToMany( )
     // };
-    return Categories;
-};
