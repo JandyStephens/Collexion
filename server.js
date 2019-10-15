@@ -8,6 +8,8 @@ var router = express.Router();
 var Sequelize = require("sequelize");
 var env = process.env.NODE_ENV || "development";
 var config = require("./config/config.json")[env]
+var session = require('express');
+require('dotenv').config();
 
 // console.log(config);
 
@@ -17,7 +19,11 @@ var config = require("./config/config.json")[env]
 var app = express();
 var PORT = process.env.PORT || 8080;
 // require('dotenv').config();
+<<<<<<< HEAD
+var allRoutes = require('./controllers');
+=======
 var allRoutes = require('./controllers'); 
+>>>>>>> b7b572fd98e98e31e6c16b434d90e4fb0872ecfc
 
 // Requiring our models for syncing
 //TODO: sequelize things....
@@ -36,12 +42,12 @@ app.engine('handlebars', exphbs({ defaultLayout: "main" }));
 app.set('view engine', 'handlebars');
 
 //tied to login auth credentials
-// app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
+app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
 
 app.use('/', allRoutes);
 
 app.get('/', function (req, res) {
-    res.json('Server up baby')
+    res.render('index')
 })
 
 require("./routes/collector-api-routes.js")(app);
