@@ -1,6 +1,7 @@
 
+
 module.exports = function (sequelize, DataTypes) {
-    var Item = sequelize.define("Item", {
+    var Login = sequelize.define("Login", {
         name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -9,11 +10,7 @@ module.exports = function (sequelize, DataTypes) {
         quantity: DataTypes.INTEGER,
 
     });
-    return Item
+    return Login
 }
-
-
-
-
 
 

@@ -1,0 +1,21 @@
+/* .container-fluid {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+} */
+.navBar {
+    background: black;
+    color: goldenrod;
+}
+.navLink-active {
+    color: goldenrod;
+    font-size: 30px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+.tab-content {
+    color: goldenrod;
+}
+/* .section-black {
+    background: black;
+    color: white;
+} */
