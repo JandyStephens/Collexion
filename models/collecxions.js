@@ -1,5 +1,4 @@
 module.exports = function (sequelize, DataTypes) {
-<<<<<<< HEAD
     var Collections = sequelize.define("Collections", {
         title: {
             type: DataTypes.STRING,
@@ -39,23 +38,3 @@ module.exports = function (sequelize, DataTypes) {
     });
     return Collections;
 }
-=======
-    var Collexion = sequelize.define("Collexion", {
-        name: {
-            type: DataTypes.STRING,
-            unique: true
-        },
-        password: DataTypes.STRING
-    });
-
-
-    // Collexion.associate = function (models) {
-    //     //Assoc. Collextor with Collextion. When Collextor deleted, also delete associated Collexions.
-    //     Collexion.hasMany(models.Collexion, {
-    //         onDelete: "cascade"
-    //     });
-    //     // Collextor.belongsToMany( )
-    // };
-    return Collexion;
-};
->>>>>>> 55a20f84e9eadc94dc02a9b77fc9cd2f83ecf60e
