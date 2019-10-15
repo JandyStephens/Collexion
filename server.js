@@ -17,6 +17,8 @@ var config = require("./config/config.json")[env]
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+// require('dotenv').config();
+var allRoutes = require('./controllers'); TODO:
 
 // Requiring our models for syncing
 //TODO:Is this necessary???
@@ -26,8 +28,22 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Static directory
+// Static directory will live on front end
 app.use(express.static("public"));
+
+var exphbs = require('express-handlebars');
+
+app.engine('handlebars', exphbs({ defaultLayout: "main" }));
+app.set('view engine', 'handlebars');
+
+//tied to login auth credentials
+// app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
+
+app.use('/', allRoutes);
+
+app.get('/', function (req, res) {
+    res.json('Server up baby')
+})
 
 require("./routes/collector-api-routes.js")(app);
 
