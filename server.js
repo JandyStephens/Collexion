@@ -17,7 +17,7 @@ var config = require("./config/config.json")[env]
 var app = express();
 var PORT = process.env.PORT || 8080;
 // require('dotenv').config();
-var allRoutes = require('./controllers'); TODO:
+var allRoutes = require('./controllers'); 
 
 // Requiring our models for syncing
 //TODO: sequelize things....
