@@ -4,9 +4,6 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-<<<<<<< HEAD
-var path = require("path");
-=======
 var router = express.Router();
 var Sequelize = require("sequelize");
 var env = process.env.NODE_ENV || "development";
@@ -14,7 +11,6 @@ var config = require("./config/config.json")[env]
 
 // console.log(config);
 
->>>>>>> 1ae0afb357f89713afd478b02b9cd48e3d002c82
 
 // Sets up the Express App
 // =============================================================
@@ -31,10 +27,6 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-<<<<<<< HEAD
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes-al.js")(app);
-=======
 // Static directory will live on front end
 app.use(express.static("public"));
 
@@ -53,7 +45,6 @@ app.get('/', function (req, res) {
 })
 
 require("./routes/collector-api-routes.js")(app);
->>>>>>> 1ae0afb357f89713afd478b02b9cd48e3d002c82
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function () {
