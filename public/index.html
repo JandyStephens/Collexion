@@ -28,10 +28,10 @@
         <h1><a href="#">Collexion</a></h1>
         <nav id="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="userIndex.html">My Collexions</a></li>
-                <li><a href="makeCollextion.html">Make a Collexion</a></li>
-                <li><a href="viewGlobal.html">Visit Global Collexions</a></li>
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <!-- <li><a href="userIndex.html">My Collexions</a></li> -->
+                <!-- <li><a href="makeCollextion.html">Make a Collexion</a></li> -->
+                <li><a href="viewGlobal.html">Search Global Collexions</a></li>
                 <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
                         class="button special" href="#modal1">Sign In</button></li>
                 <style>
@@ -165,7 +165,7 @@
 
                 <div id="id01" class="modal">
 
-                    <form class="modal-content animate">
+                    <form class="modal-content animate" action='/auth/login' method='POST'>
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id01').style.display='none'" class="close"
                                 title="Close Modal">&times;</span>
@@ -173,22 +173,22 @@
                         </div>
 
                         <div class="container">
-                            <label for="uname"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <label for="name"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="name" required>
 
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <label for="password"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="password" required>
 
                             <button type="submit">Login</button>
                             <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                                <!-- <input type="checkbox" checked="checked" name="remember"> Remember me -->
                             </label>
                         </div>
 
                         <div class="container" style="background-color:#f1f1f1 width: 40%;">
                             <button type="button" onclick="document.getElementById('id01').style.display='none'"
                                 class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
+                            <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
                         </div>
                     </form>
                 </div>
@@ -370,15 +370,15 @@
                             <input type="password" placeholder="Enter Password" name="cpsw" required>
 
                             <button type="submit" id="sign-up-btn">Sign Up</button>
-                            <label>
+                            <!-- <label>
                                 <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
+                            </label> -->
                         </div>
 
                         <div class="container" width: 40%;">
                             <button type="button" onclick="document.getElementById('id02').style.display='none'"
                                 class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
+                            <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
                         </div>
                     </form>
                 </div>

@@ -10,6 +10,7 @@ var env = process.env.NODE_ENV || "development";
 var config = require("./config/config.json")[env]
 var session = require('express');
 require('dotenv').config();
+var session = require("express-session");
 
 // console.log(config);
 
@@ -38,7 +39,9 @@ app.engine('handlebars', exphbs({ defaultLayout: "main" }));
 app.set('view engine', 'handlebars');
 
 //tied to login auth credentials
-app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
+// console.log("print process env", process.env);
+//TODO:Jandy 
+app.use(session({ secret: "process.env.SESSION_SECRET", resave: true, saveUninitialized: true }));
 
 app.use('/', allRoutes);
 

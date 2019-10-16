@@ -48,11 +48,12 @@ router.post('/login', function (req, res) {
         where: {
             name: req.body.name
         }
-    }).then(function (dbUser) {
+    }).then(function (dbCollector) {
         //compares password send in req.body to one in database, will return true if matched.
-        if (bcrypt.compareSync(req.body.password, dbUser.password)) {
+        if (dbCollector && req.body.password === dbCollector.password) {
             //create new session property "user", set equal to logged in user
-            req.session.user = dbUser
+            req.session.user = dbCollector;
+            delete req.session.error
         }
         else {
             //delete existing user, add error
@@ -63,12 +64,16 @@ router.post('/login', function (req, res) {
     })
 })
 
+
+// $('.sign-out-btn').click(function (event) {
+//     event.preventDefault;
 router.get('/logout', function (req, res) {
     //delete session user, logging you out
     req.session.destroy(function () {
-        res.send('successfully logged out')
+        res.render('index')
     })
 })
+// })
 
 //developer route to see all the session variables.
 router.get('/readsessions', function (req, res) {
