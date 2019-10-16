@@ -7,8 +7,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         email: DataTypes.STRING,
-
-
+        
         password: {
             type: DataTypes.STRING,
             allowNull: false
@@ -19,18 +18,16 @@ module.exports = function (sequelize, DataTypes) {
             // allowNull: false
         },
 
-        // gender: DataTypes.ENUM('male','female'),
+        gender: DataTypes.ENUM('male', 'female'),
 
         description: DataTypes.TEXT
     });
 
+    Collector.associate = function (models) {
+        Collector.hasMany(models.Collections, {
+            onDelete: "cascade"
+        });
+    };
 
-    // Collector.associate = function (models) {
-    //     //Assoc. Collextor with Collextion. When Collextor deleted, also delete associated Collexions.
-    //     Collector.hasMany(models.Collexion, {
-    //         onDelete: "cascade"
-    //     });
-    //     // Collextor.belongsToMany( )
-    // };
     return Collector;
 };

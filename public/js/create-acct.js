@@ -1,7 +1,7 @@
 
 
 $("#sign-up-btn").click(function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     // console.log('clicked');
     //TODO: create object to send in post request
     var signUpInfo = {
