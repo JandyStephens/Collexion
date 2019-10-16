@@ -29,9 +29,10 @@
         <h1><a href="#" id="collexionBar">Collexion</a></h1>
         <nav id="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="userIndex.html">My Collexions</a></li>
-                <li><a href="viewGlobal.html">Visit Global Collexions</a></li>
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <!-- <li><a href="userIndex.html">My Collexions</a></li> -->
+                <!-- <li><a href="makeCollextion.html">Make a Collexion</a></li> -->
+                <li><a href="viewGlobal.html">Search Global Collexions</a></li>
                 <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
                         class="button special" href="#modal1">Sign In</button></li>
                 <style>
@@ -165,7 +166,7 @@
 
                 <div id="id01" class="modal">
 
-                    <form class="modal-content animate" action="/action_page.php" method="post">
+                    <form class="modal-content animate" action='/auth/login' method='POST'>
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id01').style.display='none'" class="close"
                                 title="Close Modal">&times;</span>
@@ -173,22 +174,22 @@
                         </div>
 
                         <div class="container">
-                            <label for="uname"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <label for="name"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="name" required>
 
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <label for="password"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="password" required>
 
                             <button type="submit">Login</button>
                             <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                                <!-- <input type="checkbox" checked="checked" name="remember"> Remember me -->
                             </label>
                         </div>
 
                         <div class="container" style="background-color:#f1f1f1 width: 40%;">
                             <button type="button" onclick="document.getElementById('id01').style.display='none'"
                                 class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
+                            <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
                         </div>
                     </form>
                 </div>
@@ -359,23 +360,27 @@
 
                         <div class="container-signup">
                             <label for="uname"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <input id="username" type="text" placeholder="Enter Username" name="uname" required>
 
-                            <label for="uEmail"><b>email</b></label>
-                            <input type="text" placeholder="Enter Email" name="uEmail" required>
+                            <label for="uEmail"><b>Email</b></label>
+                            <input id="email" type="text" placeholder="Enter Email" name="uEmail" required>
 
                             <label for="psw"><b>Enter Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <input id="password" type="password" placeholder="Enter Password" name="psw" required>
 
                             <label for="cpsw"><b>Confirm Password</b></label>
                             <input type="password" placeholder="Enter Password" name="cpsw" required>
 
-                            <button type="submit">Sign Up</button>
+                            <button type="submit" id="sign-up-btn">Sign Up</button>
+                            <!-- <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label> -->
                         </div>
 
                         <div class="container-cancel">
                             <button type="button" onclick="document.getElementById('id02').style.display='none'"
                                 class="cancelbtn">Cancel</button>
+                            <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
                         </div>
                     </form>
                 </div>
@@ -502,20 +507,20 @@
             <div class="row double">
                 <div class="6u">
                     <div class="row collapse-at-2">
-                        
-                <div class="6u">
-                    <h2>Let's Connect</h2>
-                    <p></p>
-                    <ul class="icons">
-                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                        <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-                    </ul>
+
+                        <div class="6u">
+                            <h2>Let's Connect</h2>
+                            <p></p>
+                            <ul class="icons">
+                                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </footer>
-    <script src="/js/consoleloggin.js"></script>
+    <script src="/js/create-acct.js"></script>
 </body>
