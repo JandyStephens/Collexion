@@ -396,9 +396,12 @@
 
 	.box {
 		border-radius: 6px;
-		border: solid 1px rgba(144, 144, 144, 0.25);
+		border: solid 2px rgba(144, 144, 144, 0.25);
 		margin-bottom: 2em;
-		padding: 3em 2em;
+		padding: 2em 1em;
+		background: rgb(109, 36, 36);
+		width: 80%;
+	
 	}
 
 		.box > :last-child,
@@ -810,7 +813,7 @@
 			input[type="reset"].special:hover,
 			input[type="button"].special:hover,
 			.button.special:hover {
-				background-color: rgb(172, 127, 13);
+				background-color: rgb(102, 31, 31);
 			}
 
 			input[type="submit"].special:active,
@@ -838,10 +841,12 @@
 
 	.wrapper {
 		padding: 6em 0 4em 0;
+		box-shadow: rgb(0, 0, 0);
+
 	}
 
 		.wrapper.style1 {
-			background: #fff;
+			background: rgb(0, 0, 0);
 			color: #555f66;
 		}
 
@@ -978,11 +983,11 @@
 
 	#banner {
 		background-color: #666666;
-		background-image: url("../images/banner.jpg");
+		background-image: url("../images/honeycombmainpage.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
-		color: #d8d8d8;
+		color: #ffffff;
 		padding: 14em 0;
 		text-align: center;
 		position: relative;
@@ -1189,7 +1194,7 @@ a {
   height: auto;
   width: 70%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 30px auto;
   border-radius: 50%;
   background: #FFFFFF;
 }
@@ -1254,11 +1259,16 @@ a {
   box-sizing: border-box;
   padding: 10px 0 0 6%;
   background: #FFFFFF;
+<<<<<<< HEAD
+  text-align: center;
+  margin: 30px;
+=======
 }
 
 #title > i {
 	margin-right:15px;
 	margin-top: 8px;
+>>>>>>> dc6ee17281e9aef844f460184e91b05e7467ee9b
 }
 
 #slide-over {
@@ -1667,11 +1677,12 @@ label {
     position: relative;
     height: auto;
     width: 100%;
-    padding: 0;
+	padding: 30px;
+	margin-top: 50px;
   }
 
   #title h1 {
-    margin: 10px 0;
+    margin: 30px 0;
   }
 
   #contact {
@@ -1707,3 +1718,25 @@ label {
   #contact input[type="text"], #contact textarea {
     width: 80%;
   }
+<<<<<<< HEAD
+}
+
+.container-signup{
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.container-cancel{
+	width: 100%;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+}
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+#collexionBar {
+	margin-left: 50px;
+}
+=======
+>>>>>>> dc6ee17281e9aef844f460184e91b05e7467ee9b
