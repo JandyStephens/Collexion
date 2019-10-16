@@ -14,10 +14,10 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
 
-        // image_url: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // },
+        image_url: {
+            type: DataTypes.STRING,
+            // allowNull: false
+        },
 
         // gender: DataTypes.ENUM('male','female'),
 
