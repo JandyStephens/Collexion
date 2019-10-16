@@ -83,6 +83,26 @@ db.Category.findOrCreate({
     }
 });
 
+db.Collector.findOrCreate({
+    where:{
+        name:'aaaaandrew',
+        email:'andrewlin618@gmail.com',
+        password:'password',
+        image_url_url:'null',
+        gender:'male',
+        description:'nothing to say, sorry.'
+    }
+});
+
+db.Collections.findOrCreate({
+    where:{
+        title:'all version of iPhones',
+        image_url: 'null',
+        CollectorId:1,
+        CategoryId:4
+    }
+});
+
 
 
 
