@@ -25,7 +25,8 @@
 
     <!-- Header -->
     <header id="header" class="skel-layers-fixed">
-        <h1><a href="#">Collexion</a></h1>
+        <a href="#" class="navbar-left"><img src="images/bee-logo-collexion2.gif"></a>
+        <h1><a href="#" id="collexionBar">Collexion</a></h1>
         <nav id="nav">
             <ul>
                 <!-- <li><a href="index.html">Home</a></li> -->
@@ -209,6 +210,7 @@
     </header>
 
     <!-- Banner -->
+    <!--this section needs to be moved from id to img so we can put in new image-->
     <section id="banner">
         <div class="inner">
             <h2>Collexion</h2>
@@ -349,14 +351,14 @@
 
                 <div id="id02" class="modal">
 
-                    <form class="modal-content animate">
-                        <div class="imgcontainer">
+                    <form class="modal-content animate" action="/action_page.php" method="post">
+                        <!-- <div class="imgcontainer">
                             <span onclick="document.getElementById('id02').style.display='none'" class="close"
                                 title="Close Modal">&times;</span>
                             <img src="img_avatar2.png" alt="Avatar" class="avatar">
-                        </div>
+                        </div> -->
 
-                        <div class="container">
+                        <div class="container-signup">
                             <label for="uname"><b>Username</b></label>
                             <input id="username" type="text" placeholder="Enter Username" name="uname" required>
 
@@ -375,7 +377,7 @@
                             </label> -->
                         </div>
 
-                        <div class="container" width: 40%;">
+                        <div class="container-cancel">
                             <button type="button" onclick="document.getElementById('id02').style.display='none'"
                                 class="cancelbtn">Cancel</button>
                             <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
@@ -403,25 +405,31 @@
         <header class="major">
             <h2>Display, View & Trade</h2>
         </header>
-        <div class="container">
+        <div class="dVTContainer">
             <div class="row">
                 <div class="4u">
                     <section class="special box">
-                        <i class="icon fa-area-chart major"></i>
+                        <img src="images/display.jpg" alt="Display" id=displayImage>
+                        <style>
+                            #displayImage {
+                                height: 200px;
+                                width: 400px;
+                            }
+                        </style>
                         <h3>Display</h3>
                         <p>Showcase your collection to users around the world.</p>
                     </section>
                 </div>
                 <div class="4u">
                     <section class="special box">
-                        <i class="icon fa-refresh major"></i>
+                        <img src="images/global-collect.jpg" alt="Display" id=displayImage>
                         <h3>View</h3>
                         <p>See collections of users with similar interests from all around the world.</p>
                     </section>
                 </div>
                 <div class="4u">
                     <section class="special box">
-                        <i class="icon fa-cog major"></i>
+                        <img src="images/barter-image.jpg" alt="Display" id=displayImage>
                         <h3>Trade</h3>
                         <p>Contact users and trade items from your collections.</p>
                     </section>
@@ -452,12 +460,25 @@
                     <section class="special">
                         <a href="#" class="image fit"><img src="images/s-l1600.jpg" alt="" /></a>
                         <h3>How to use Collexion</h3>
-                        <p>Collextion was designed by collectors for collectors and is meant to be as user-friendly as
+                        <<<<<<< HEAD <p>Collextion was designed by collectors for collectors and is meant to be as
+                            user-friendly as
                             possible. Starting is as easy as making a profile and uploading photos of your collection.
-                        </p>
-                        <ul class="actions">
-                            <li><a href="#" class="button alt">Learn More</a></li>
-                        </ul>
+                            </p>
+                            =======
+                            <<<<<<< HEAD <p>Collextion was designed by collectors for collectors and is meant to be as
+                                user-friendly as
+                                possible. Starting is as easy as making a profile and uploading photos of your
+                                collection.
+                                </p>
+                                =======
+                                <p>Collexion was designed by collectors for collectors and is meant to be as
+                                    user-friendly as possible. Starting is as easy as making a profile and uploading
+                                    photos of your collection.</p>
+                                >>>>>>> dc6ee17281e9aef844f460184e91b05e7467ee9b
+                                >>>>>>> dev
+                                <ul class="actions">
+                                    <li><a href="#" class="button alt">Learn More</a></li>
+                                </ul>
                     </section>
                 </div>
             </div>
@@ -472,20 +493,40 @@
                     <section>
                         <h2>About Us</h2>
                         <a href="#" class="image fit"><img src="images/collector.jpg" alt="" /></a>
-                        <p>We are a team of developers and hobbyists with interests ranging from sports to fashion to
-                            technology. We created Collextion after realized the need for a space where collections
-                            could not only sell and trade but primarily to showcase. Of course there are other options
-                            out there but we wanted to make a website customized to the needs of collectors. </p>
+                        <<<<<<< HEAD=======<<<<<<< HEAD>>>>>>> dev
+                            <p>We are a team of developers and hobbyists with interests ranging from sports to fashion
+                                to
+                                technology. We created Collextion after realized the need for a space where collections
+                                could not only sell and trade but primarily to showcase. Of course there are other
+                                options
+                                out there but we wanted to make a website customized to the needs of collectors. </p>
+                            <<<<<<< HEAD==============<p>We are a team of developers and hobbyists with interests
+                                ranging from sports to fashion to technology. We created Collexion after realized the
+                                need for a space where collections could not only sell and trade but primarily to
+                                showcase. Of course there are other options out there but we wanted to make a website
+                                customized to the needs of collectors. </p>
+                                >>>>>>> dc6ee17281e9aef844f460184e91b05e7467ee9b
+                                >>>>>>> dev
                     </section>
                 </div>
                 <div class="4u">
                     <section>
                         <h3>Privacy Policy</h3>
-                        <p>At Collextion, your privacy is important to us. Learn more about how we protect your privacy
-                        </p>
-                        <ul class="actions">
-                            <li><a href="#" class="button alt">Learn More</a></li>
-                        </ul>
+                        <<<<<<< HEAD <p>At Collextion, your privacy is important to us. Learn more about how we protect
+                            your privacy
+                            </p>
+                            =======
+                            <<<<<<< HEAD <p>At Collextion, your privacy is important to us. Learn more about how we
+                                protect your privacy
+                                </p>
+                                =======
+                                <p>At Collexion, your privacy is important to us. Learn more about how we protect your
+                                    privacy</p>
+                                >>>>>>> dc6ee17281e9aef844f460184e91b05e7467ee9b
+                                >>>>>>> dev
+                                <ul class="actions">
+                                    <li><a href="#" class="button alt">Learn More</a></li>
+                                </ul>
                     </section>
                     <hr />
                 </div>
@@ -499,44 +540,20 @@
             <div class="row double">
                 <div class="6u">
                     <div class="row collapse-at-2">
+
                         <div class="6u">
-                            <h3>Accumsan</h3>
-                            <ul class="alt">
-                                <li><a href="#">Nascetur nunc varius</a></li>
-                                <li><a href="#">Vis faucibus sed tempor</a></li>
-                                <li><a href="#">Massa amet lobortis vel</a></li>
-                                <li><a href="#">Nascetur nunc varius</a></li>
-                            </ul>
-                        </div>
-                        <div class="6u">
-                            <h3>Faucibus</h3>
-                            <ul class="alt">
-                                <li><a href="#">Nascetur nunc varius</a></li>
-                                <li><a href="#">Vis faucibus sed tempor</a></li>
-                                <li><a href="#">Massa amet lobortis vel</a></li>
-                                <li><a href="#">Nascetur nunc varius</a></li>
+                            <h2>Let's Connect</h2>
+                            <p></p>
+                            <ul class="icons">
+                                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="6u">
-                    <h2>Connect with us</h2>
-                    <p></p>
-                    <ul class="icons">
-                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                        <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li>
-                <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-                <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-            </ul>
-        </div>
     </footer>
     <script src="/js/create-acct.js"></script>
 </body>

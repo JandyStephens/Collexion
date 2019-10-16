@@ -7,28 +7,208 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Hexa Template by Codin @ Codesmite.com">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/skel.min.js"></script>
+  <script src="js/skel-layers.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://kit.fontawesome.com/444ba33782.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="./css/normalize.min.css">
+  <link rel="stylesheet" href="css/skel.css" />
   <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" href="css/style-xlarge.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/normalize.min.css">
 </head>
 
 
 <body>
 
-    <header id="header" class="skel-layers-fixed">
-        <h1><a href="#">Collexion</a></h1>
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="userIndex.html">My Collexions</a></li>
-                <li><a href="makeCollextion.html">Make a Collexion</a></li>
-                <li><a href="viewGlobal.html">Visit Global Collexions</a></li>
-                <li><a href="#" class="button special">Sign In</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+  <!-- Header -->
+  <header id="header" class="skel-layers-fixed">
+    <a href="#" class="navbar-left"><img src="images/bee-logo-collexion2.gif"></a>
+    <h1><a href="#" id="collexionBar">Collexion</a></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="userIndex.html">My Collexions</a></li>
+        <li><a href="viewGlobal.html">Visit Global Collexions</a></li>
+        <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+            class="button special" href="#modal1">Sign In</button></li>
+        <style>
+          /* Full-width input fields */
+          input[type=text],
+          input[type=password] {
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+          }
+
+          /* Extra styles for the cancel button */
+          .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+          }
+
+          /* Center the image and position the close button */
+          .imgcontainer {
+            text-align: center;
+            /* margin: 24px 0 12px 0; */
+            position: relative;
+          }
+
+          img.avatar {
+            width: 40%;
+            border-radius: 50%;
+          }
+
+          .container {
+            padding: 16px;
+          }
+
+          span.psw {
+            float: right;
+            padding-top: 16px;
+          }
+
+          /* The Modal (background) */
+          .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+          }
+
+          /* Modal Content/Box */
+          .modal-content {
+            background-color: #000000;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid black;
+            width: 40%;
+            /* Could be more or less, depending on screen size */
+          }
+
+          /* The Close Button (x) */
+          .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+          }
+
+          .close:hover,
+          .close:focus {
+            color: red;
+            cursor: pointer;
+          }
+
+          /* Add Zoom Animation */
+          .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+          }
+
+          @-webkit-keyframes animatezoom {
+            from {
+              -webkit-transform: scale(0)
+            }
+
+            to {
+              -webkit-transform: scale(1)
+            }
+          }
+
+          @keyframes animatezoom {
+            from {
+              transform: scale(0)
+            }
+
+            to {
+              transform: scale(1)
+            }
+          }
+
+          /* Change styles for span and cancel button on extra small screens */
+          @media screen and (max-width: 300px) {
+            span.psw {
+              display: block;
+              float: none;
+            }
+
+            .cancelbtn {
+              width: 100%;
+            }
+          }
+        </style>
+        </head>
+
+        <div id="id01" class="modal">
+
+          <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+              <img src="img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1 width: 40%;">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+
+        <script>
+          // Get the modal
+          var modal = document.getElementById('id01');
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        </script>
+      </ul>
+    </nav>
+  </header>
   <!--Sidebar w user info -->
+  <div class="main-container">
   <div id="sidebar">
     <div id="sidebar__portrait">
       <img src="images/Tom.jpg" alt="Tom Image" />
@@ -54,135 +234,191 @@
         <p>ASK ABOUT MY COLLECTION</p>
       </div>
     </a>
+    <div>
+      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"
+        class="button big special" href="#modal1">Make a Collection</button></li>
+      <style>
+        /* Full-width input fields */
+        input[type=text],
+        input[type=text],
+        input[type=text],
+        input[type=text] {
+          width: 40%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+          text-align: center;
+          margin: 24px 0 12px 0;
+          position: relative;
+        }
+
+        img.avatar {
+          width: 40%;
+          border-radius: 50%;
+        }
+
+        .container {
+          padding: 16px;
+        }
+
+        span.psw {
+          float: right;
+          padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+          display: none;
+          /* Hidden by default */
+          position: fixed;
+          /* Stay in place */
+          z-index: 1;
+          /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%;
+          /* Full width */
+          height: 100%;
+          /* Full height */
+          overflow: auto;
+          /* Enable scroll if needed */
+          background-color: rgb(0, 0, 0);
+          /* Fallback color */
+          background-color: rgba(0, 0, 0, 0.664);
+          /* Black w/ opacity */
+          padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+          background-color: #000000;
+          margin: 5% auto 15% auto;
+          /* 5% from the top, 15% from the bottom and centered */
+          border: 1px solid black;
+          width: 40%;
+          /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+          position: absolute;
+          right: 25px;
+          top: 0;
+          color: #000;
+          font-size: 35px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: red;
+          cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+          -webkit-animation: animatezoom 0.6s;
+          animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+          from {
+            -webkit-transform: scale(0)
+          }
+
+          to {
+            -webkit-transform: scale(1)
+          }
+        }
+
+        @keyframes animatezoom {
+          from {
+            transform: scale(0)
+          }
+
+          to {
+            transform: scale(1)
+          }
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+          span.psw {
+            display: block;
+            float: none;
+          }
+
+          .cancelbtn {
+            width: 100%;
+          }
+        }
+      </style>
+      </head>
+
+      <div id="id02" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close"
+              title="Close Modal">&times;</span>
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+          </div>
+
+          <div class="container">
+            <label for="categoryName"><b>Category</b></label>
+            <input type="text" placeholder="Enter Collex Category" name="categoryName" required>
+
+            <label for="colImages"><b>Images</b></label>
+            <input type="text" placeholder="Enter Collexion Images" name="colImages" required>
+
+            <label for="bDes"><b>Give a Brief Description</b></label>
+            <input type="text" placeholder="Enter a Brief Description" name="bDes" required>
+
+            <button type="submit">Create Collection</button>
+          </div>
+
+          <div class="container" width: 40%;">
+            <button type="button" onclick="document.getElementById('id02').style.display='none'"
+              class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById('id02');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+    </div>
   </div>
   <!--Main grid of hexagons with display of all collections-->
-  <div id="title">
-    <i class="fas fa-arrow-left trigger-images hidden" data-state="reset"></i>
-    <h1>My Collections</h1>
-    <!--Collections is clickable to take back to main collection page-->
-  </div>
-  <ul id="grid" class="clr">
-    <!-- <li>
-      <a href="#" class="toggle-slide" data-id="#item1">
-        <div class="hexagon">
-          <img data-state="collection" src="images/shoes1.jpg" data-ref="shoeCollec" data-original="images/shoes1.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>  
-      </a>
-    </li> -->
-    <!-- <li>
-      <a href="#" class="toggle-slide" data-id="#item2">
-        <div class="hexagon">
-          <img data-state="collection" src="images/box.jpg" data-original="images/box.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item3">
-        <div class="hexagon">
-          <img data-state="collection" src="images/3.jpg" data-original="images/3.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item4">
-        <div class="hexagon">
-          <img data-state="collection" src="images/4.jpg" data-original="images/4.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item5">
-        <div class="hexagon">
-          <img data-state="collection" src="images/5.jpg" data-original="images/5.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item6">
-        <div class="hexagon">
-          <img data-state="collection" src="images/6.jpg" data-original="images/6.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item7">
-        <div class="hexagon">
-          <img data-state="collection" src="images/7.jpg" data-original="images/7.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item8">
-        <div class="hexagon">
-          <img data-state="collection" src="images/8.jpg" data-original="images/8.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item9">
-        <div class="hexagon">
-          <img data-state="collection" src="images/9.jpg" data-original=="images/9.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item10">
-        <div class="hexagon">
-          <img data-state="collection" src="imadata-original/10. "images/10.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item11">
-        <div class="hexagon">
-          <img data-state="collection" src="images/11.jpg" data-original="images/11.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item12">
-        <div class="hexagon">
-          <img data-state="collection" src="images/12.jpg" data-original="images/12.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item13">
-        <div class="hexagon">
-          <img data-state="collection" src="images/13.jpg" data-original="images/13.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item14">
-        <div class="hexagon">
-          <img data-state="collection" src="images/14.jpg" data-original="images/14.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="toggle-slide" data-id="#item15">
-        <div class="hexagon">
-          <img data-state="collection" src="images/15.jpg" data-original="images/15.jpg" alt="Lorem Ipsum"/>
-          <div class="overlay trigger-images"></div>
-        </div>
-      </a>
-    </li> -->
-  </ul>
+  <div class="main">
+    <div id="title">
+      <i class="fas fa-arrow-left trigger-images hidden" data-state="reset"></i>
+      <h1>My Collections</h1>
+      <!--Collections is clickable to take back to main collection page-->
+    </div>
+    <ul id="grid" class="clr"></ul>
   <div id="slide-over">
     <div class="left">
       <a href="#">
@@ -199,174 +435,8 @@
       <img class="slide-over-image" src="#" alt="Lorem Ipsum" />
     </div>
   </div>
-  <!-- <div id="item2">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/2.jpg" alt="Lorem Ipsum"/>
 </div>
 </div>
-<div id="item3">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est. 
-   </p>
- </div>
- <div class="right">
-  <img src="images/3.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item4">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/4.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item5">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est. 
-   </p>
- </div>
- <div class="right">
-  <img src="images/5.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item6">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/6.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item7">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/7.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item8">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/8.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item9">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/9.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item10">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/10.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item11">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/11.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item12">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/12.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item13">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est.
-   </p>
- </div>
- <div class="right">
-  <img src="images/13.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item14">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est. 
-   </p>
- </div>
- <div class="right">
-  <img src="images/14.jpg" alt="Lorem Ipsum"/>
-</div>
-</div>
-<div id="item15">
-  <div class="left">
-    <a href="#"><div class="button"><p>CLOSE &gt;&gt;</p></div></a>
-    <h2>ITEM TITLE</h2>
-    <p>
-     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel molestie orci. Nulla egestas libero tellus, rhoncus facilisis nulla eleifend eget. Donec quis nunc sodales turpis gravida consectetur eu ut diam. Vestibulum ut ante justo. Nunc ac tincidunt turpis. Duis at massa consectetur, porta augue sed, elementum est. In hac habitasse platea dictumst. Duis sed sollicitudin risus. Donec fermentum laoreet odio. Nullam nec mi et mauris ultrices dictum. Vestibulum malesuada mattis ornare. Ut sit amet tellus nec neque tempus scelerisque. Etiam pretium felis et augue efficitur, eu pharetra sapien consequat. Aenean imperdiet ante mi, eget condimentum mauris imperdiet pulvinar. Mauris ut suscipit eros, sit amet congue erat. Fusce nec augue est. 
-   </p>
- </div>
- <div class="right">
-  <img src="images/15.jpg" alt="Lorem Ipsum"/>
-</div>
-</div> -->
   <div id="contact">
     <a href="#">
       <div class="button">

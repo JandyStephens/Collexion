@@ -4,10 +4,24 @@ module.exports = function (sequelize, DataTypes) {
     var Collector = sequelize.define("Collector", {
         name: {
             type: DataTypes.STRING,
-            unique: true
+            allowNull: false
         },
         email: DataTypes.STRING,
-        password: DataTypes.STRING
+
+
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        // image_url: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
+
+        // gender: DataTypes.ENUM('male','female'),
+
+        description: DataTypes.TEXT
     });
 
 

@@ -1,5 +1,3 @@
-
-
 module.exports = function (sequelize, DataTypes) {
     var Login = sequelize.define("Login", {
         name: {
