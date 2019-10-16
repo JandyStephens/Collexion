@@ -9,7 +9,7 @@ CREATE TABLE categories(
     PRIMARY KEY(id)
 );
 
-CREATE TABLE users(
+CREATE TABLE collectors(
     id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(30) NOT NULL,
     password VARCHAR(30) NOT NULL,
