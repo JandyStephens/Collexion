@@ -25,4 +25,10 @@ router.get("/add/:username", function (req, res) {
 router.get("/collection/:id", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/viewGlobal.html"));
 });
+
+// router.get("*", function (req, res) {
+//     console.log('nonexistent route')
+//     res.redirect('/')
+// });
+
 module.exports = router;
