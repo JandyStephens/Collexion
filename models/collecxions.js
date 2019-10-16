@@ -7,8 +7,6 @@ module.exports = function (sequelize, DataTypes) {
 
         price: DataTypes.INTEGER,
 
-        hello: DataTypes.INTEGER,
-
         quantity: DataTypes.INTEGER,
 
         image1_url: {
@@ -24,16 +22,6 @@ module.exports = function (sequelize, DataTypes) {
         description: DataTypes.TEXT,
 
         comments: DataTypes.TEXT,
-
-        // user_id: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // },
-
-        // category_id: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // }
 
     });
 
