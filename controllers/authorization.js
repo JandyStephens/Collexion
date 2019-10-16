@@ -31,9 +31,13 @@ router.post('/signup', function (req, res) {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password
-    }).then(function (newCollector) {
-        console.log(newCollector)
-        res.json(newCollector);
+    }).then(function (dbCollector) {
+        // console.log(newCollector)
+        // res.json(newCollector);
+        req.session.user = dbCollector;
+        delete req.session.error
+        // alert('You have sucessfully created an account!')
+        res.redirect('/myCollexions')
     })
 })
 
@@ -54,13 +58,15 @@ router.post('/login', function (req, res) {
             //create new session property "user", set equal to logged in user
             req.session.user = dbCollector;
             delete req.session.error
+            // alert('You have sucessfully created an account!')
+            res.redirect('/myCollexions')
         }
         else {
             //delete existing user, add error
             req.session.user = false;
             req.session.error = 'Authorization failed.'
         }
-        res.json(req.session);
+        // res.json(req.session);
     })
 })
 

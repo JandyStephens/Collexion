@@ -1259,16 +1259,11 @@ a {
   box-sizing: border-box;
   padding: 10px 0 0 6%;
   background: #FFFFFF;
-<<<<<<< HEAD
-  text-align: center;
-  margin: 30px;
-=======
 }
 
 #title > i {
 	margin-right:15px;
 	margin-top: 8px;
->>>>>>> dc6ee17281e9aef844f460184e91b05e7467ee9b
 }
 
 #slide-over {
@@ -1718,7 +1713,6 @@ label {
   #contact input[type="text"], #contact textarea {
     width: 80%;
   }
-<<<<<<< HEAD
 }
 
 .container-signup{
@@ -1738,5 +1732,3 @@ img {
 #collexionBar {
 	margin-left: 50px;
 }
-=======
->>>>>>> dc6ee17281e9aef844f460184e91b05e7467ee9b

@@ -88,7 +88,7 @@ db.Collector.findOrCreate({
         name:'aaaaandrew',
         email:'andrewlin618@gmail.com',
         password:'password',
-        image_url_url:'null',
+        image_url:'null',
         gender:'male',
         description:'nothing to say, sorry.'
     }
@@ -97,7 +97,7 @@ db.Collector.findOrCreate({
 db.Collections.findOrCreate({
     where:{
         title:'all version of iPhones',
-        image_url: 'null',
+        image1_url: 'null',
         CollectorId:1,
         CategoryId:4
     }
