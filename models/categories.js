@@ -9,13 +9,12 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
     });
+
+    Category.associate = function (models) {
+        Category.hasMany(models.Collections, {
+            onDelete: "cascade"
+        });
+    };
+
     return Category;
 };
-
-    // Categories.associate = function (models) {
-    //     //Assoc. Collextor with Collextion. When Collextor deleted, also delete associated Collexions.
-    //     Collector.hasMany(models.Collexion, {
-    //         onDelete: "cascade"
-    //     });
-    //     // Collextor.belongsToMany( )
-    // };

@@ -2,7 +2,7 @@
 //==========================================================
 var express = require("express");
 var router = express.Router();
-var db = require("./models");
+var db = require("../models");
 
 
 
@@ -88,7 +88,7 @@ router.get("/categoryId/:category_id", function (req, res) {
 
 //Route: Get all collections under certain user by username;
 //==========================================================
-router.get("/user/:username", function (req, res) {
+router.get("/collector/:username", function (req, res) {
     db.Collections.findAll({
         where: {
             username: req.params.username
@@ -101,7 +101,7 @@ router.get("/user/:username", function (req, res) {
 
 //Route: Get all collections under certain user by id;
 //==========================================================
-router.get("/userId/:id", function (req, res) {
+router.get("/collectorId/:id", function (req, res) {
     db.Collections.findAll({
         where: {
             id: req.params.id
@@ -117,6 +117,7 @@ router.get("/userId/:id", function (req, res) {
 router.get("/keyword/:keyword", function (req, res) {
     db.Collections.findAll({
         where: {
+            title: {$like: `%${req.params.keyword}%`}
             // TODO: title contains keyword;
         },
         include: [db.Collectors]
