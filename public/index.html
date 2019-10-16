@@ -1,0 +1,527 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Collexion</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/skel-layers.min.js"></script>
+    <script src="/js/init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <noscript>
+        <link rel="stylesheet" href="/css/skel.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/style-xlarge.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </noscript>
+</head>
+
+<body id="top">
+
+    <!-- Header -->
+    <header id="header" class="skel-layers-fixed">
+        <a href="#" class="navbar-left"><img src="images/bee-logo-collexion2.gif"></a>
+        <h1><a href="#" id="collexionBar">Collexion</a></h1>
+        <nav id="nav">
+            <ul>
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <!-- <li><a href="userIndex.html">My Collexions</a></li> -->
+                <!-- <li><a href="makeCollextion.html">Make a Collexion</a></li> -->
+                <li><a href="viewGlobal.html">Search Global Collexions</a></li>
+                <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+                        class="button special" href="#modal1">Sign In</button></li>
+                <style>
+                    /* Full-width input fields */
+                    input[type=text],
+                    input[type=password] {
+                        width: 40%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        box-sizing: border-box;
+                    }
+
+                    /* Extra styles for the cancel button */
+                    .cancelbtn {
+                        width: auto;
+                        padding: 10px 18px;
+                        background-color: #f44336;
+                    }
+
+                    /* Center the image and position the close button */
+                    .imgcontainer {
+                        text-align: center;
+                        /* margin: 24px 0 12px 0; */
+                        position: relative;
+                    }
+
+                    img.avatar {
+                        width: 40%;
+                        border-radius: 50%;
+                    }
+
+                    .container {
+                        padding: 16px;
+                    }
+
+                    span.psw {
+                        float: right;
+                        padding-top: 16px;
+                    }
+
+                    /* The Modal (background) */
+                    .modal {
+                        display: none;
+                        /* Hidden by default */
+                        position: fixed;
+                        /* Stay in place */
+                        z-index: 1;
+                        /* Sit on top */
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        /* Full width */
+                        height: 100%;
+                        /* Full height */
+                        overflow: auto;
+                        /* Enable scroll if needed */
+                        background-color: rgb(0, 0, 0);
+                        /* Fallback color */
+                        background-color: rgba(0, 0, 0, 0.4);
+                        /* Black w/ opacity */
+                        padding-top: 60px;
+                    }
+
+                    /* Modal Content/Box */
+                    .modal-content {
+                        background-color: #000000;
+                        margin: 5% auto 15% auto;
+                        /* 5% from the top, 15% from the bottom and centered */
+                        border: 1px solid black;
+                        width: 40%;
+                        /* Could be more or less, depending on screen size */
+                    }
+
+                    /* The Close Button (x) */
+                    .close {
+                        position: absolute;
+                        right: 25px;
+                        top: 0;
+                        color: #000;
+                        font-size: 35px;
+                        font-weight: bold;
+                    }
+
+                    .close:hover,
+                    .close:focus {
+                        color: red;
+                        cursor: pointer;
+                    }
+
+                    /* Add Zoom Animation */
+                    .animate {
+                        -webkit-animation: animatezoom 0.6s;
+                        animation: animatezoom 0.6s
+                    }
+
+                    @-webkit-keyframes animatezoom {
+                        from {
+                            -webkit-transform: scale(0)
+                        }
+
+                        to {
+                            -webkit-transform: scale(1)
+                        }
+                    }
+
+                    @keyframes animatezoom {
+                        from {
+                            transform: scale(0)
+                        }
+
+                        to {
+                            transform: scale(1)
+                        }
+                    }
+
+                    /* Change styles for span and cancel button on extra small screens */
+                    @media screen and (max-width: 300px) {
+                        span.psw {
+                            display: block;
+                            float: none;
+                        }
+
+                        .cancelbtn {
+                            width: 100%;
+                        }
+                    }
+                </style>
+                </head>
+
+                <div id="id01" class="modal">
+
+                    <form class="modal-content animate" action='/auth/login' method='POST'>
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                title="Close Modal">&times;</span>
+                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container">
+                            <!-- <label for="name"><b>Username</b></label> -->
+                            <input type="text" placeholder="Enter Username" name="name" required>
+                            <br>
+                            <!-- <label for="password"><b>Password</b></label> -->
+                            <input type="password" placeholder="Enter Password" name="password" required>
+                            <br>
+                            <button type="submit">Login</button>
+                            <!-- <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label> -->
+                        </div>
+
+                        <!-- <div class="container" style="background-color:#f1f1f1 width: 40%;">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel</button> -->
+                        <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+                </div>
+                </form>
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('id01');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <!--this section needs to be moved from id to img so we can put in new image-->
+    <section id="banner">
+        <div class="inner">
+            <h2>Collexion</h2>
+            <p>For Hobby Enthusiasts and Collectors</p>
+            <ul class="actions">
+                <li><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"
+                        class="button big special" href="#modal1">Sign Up</button></li>
+                <style>
+                    /* Full-width input fields */
+                    input[type=text],
+                    input[type=text],
+                    input[type=password],
+                    input[type=password] {
+                        width: 40%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        box-sizing: border-box;
+                    }
+
+                    /* Extra styles for the cancel button */
+                    .cancelbtn {
+                        width: auto;
+                        padding: 10px 18px;
+                        background-color: #f44336;
+                    }
+
+                    /* Center the image and position the close button */
+                    .imgcontainer {
+                        text-align: center;
+                        margin: 24px 0 12px 0;
+                        position: relative;
+                    }
+
+                    img.avatar {
+                        width: 40%;
+                        border-radius: 50%;
+                    }
+
+                    .container {
+                        padding: 16px;
+                    }
+
+                    span.psw {
+                        float: right;
+                        padding-top: 16px;
+                    }
+
+                    /* The Modal (background) */
+                    .modal {
+                        display: none;
+                        /* Hidden by default */
+                        position: fixed;
+                        /* Stay in place */
+                        z-index: 1;
+                        /* Sit on top */
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        /* Full width */
+                        height: 100%;
+                        /* Full height */
+                        overflow: auto;
+                        /* Enable scroll if needed */
+                        background-color: rgb(0, 0, 0);
+                        /* Fallback color */
+                        background-color: rgba(0, 0, 0, 0.664);
+                        /* Black w/ opacity */
+                        padding-top: 60px;
+                    }
+
+                    /* Modal Content/Box */
+                    .modal-content {
+                        background-color: #000000;
+                        margin: 5% auto 15% auto;
+                        /* 5% from the top, 15% from the bottom and centered */
+                        border: 1px solid black;
+                        width: 40%;
+                        /* Could be more or less, depending on screen size */
+                    }
+
+                    /* The Close Button (x) */
+                    .close {
+                        position: absolute;
+                        right: 25px;
+                        top: 0;
+                        color: #000;
+                        font-size: 35px;
+                        font-weight: bold;
+                    }
+
+                    .close:hover,
+                    .close:focus {
+                        color: red;
+                        cursor: pointer;
+                    }
+
+                    /* Add Zoom Animation */
+                    .animate {
+                        -webkit-animation: animatezoom 0.6s;
+                        animation: animatezoom 0.6s
+                    }
+
+                    @-webkit-keyframes animatezoom {
+                        from {
+                            -webkit-transform: scale(0)
+                        }
+
+                        to {
+                            -webkit-transform: scale(1)
+                        }
+                    }
+
+                    @keyframes animatezoom {
+                        from {
+                            transform: scale(0)
+                        }
+
+                        to {
+                            transform: scale(1)
+                        }
+                    }
+
+                    /* Change styles for span and cancel button on extra small screens */
+                    @media screen and (max-width: 300px) {
+                        span.psw {
+                            display: block;
+                            float: none;
+                        }
+
+                        .cancelbtn {
+                            width: 100%;
+                        }
+                    }
+                </style>
+                </head>
+
+                <div id="id02" class="modal">
+
+                    <form class="modal-content animate" action="/auth/signup" method="post">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                                title="Close Modal">&times;</span>
+                            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container-signup">
+
+                            <!-- <label for="name"><b>Username</b></label> -->
+                            <input id="username" type="text" placeholder="Enter Username" name="name" required>
+                            <br>
+                            <!-- <label for="email"><b>Email</b></label> -->
+                            <input id="email" type="text" placeholder="Enter Email" name="email" required>
+                            <br>
+                            <!-- <label for="password"><b>Enter Password</b></label> -->
+                            <input id="password" type="password" placeholder="Enter Password" name="password" required>
+                            <br>
+                            <!-- <label for="confirm"><b>Confirm Password</b></label> -->
+                            <input type="password" placeholder="Enter Password" name="confirm" required>
+                            <br>
+                            <button type="submit" id="sign-up-btn">Sign Up</button>
+                            <!-- <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label> -->
+                        </div>
+
+                        <!-- <div class="container-cancel">
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                class="cancelbtn">Cancel</button> -->
+                        <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+                </div>
+                </form>
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id02');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        </ul>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="wrapper style1">
+        <header class="major">
+            <h2>Display, View & Trade</h2>
+        </header>
+        <div class="dVTContainer">
+            <div class="row">
+                <div class="4u">
+                    <section class="special box">
+                        <img src="images/display.jpg" alt="Display" id=displayImage>
+                        <style>
+                            #displayImage {
+                                height: 200px;
+                                width: 400px;
+                            }
+                        </style>
+                        <h3>Display</h3>
+                        <p>Showcase your collection to users around the world.</p>
+                    </section>
+                </div>
+                <div class="4u">
+                    <section class="special box">
+                        <img src="images/global-collect.jpg" alt="Display" id=displayImage>
+                        <h3>View</h3>
+                        <p>See collections of users with similar interests from all around the world.</p>
+                    </section>
+                </div>
+                <div class="4u">
+                    <section class="special box">
+                        <img src="images/barter-image.jpg" alt="Display" id=displayImage>
+                        <h3>Trade</h3>
+                        <p>Contact users and trade items from your collections.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style2">
+        <header class="major">
+            <h2>Our Collexions</h2>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="6u">
+                    <section class="special">
+                        <a href="#" class="image fit"><img src="images/closetcollection.jpg" alt="" /></a>
+                        <h3>Why use Collexion?</h3>
+                        <p> You've spent years amassing your collection, why hide it away when you could show it off to
+                            the world. Meet new collectors, expand your collection and explore. </p>
+                        <ul class="actions">
+                            <li><a href="#" class="button alt">Learn More</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="6u">
+                    <section class="special">
+                        <a href="#" class="image fit"><img src="images/s-l1600.jpg" alt="" /></a>
+                        <h3>How to use Collexion</h3>
+                        <p>Collextion was designed by collectors for collectors and is meant to be as user-friendly as
+                            possible. Starting is as easy as making a profile and uploading photos of your collection.
+                        </p>
+                        <ul class="actions">
+                            <li><a href="#" class="button alt">Learn More</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three -->
+    <section id="three" class="wrapper style1">
+        <div class="container">
+            <div class="row">
+                <div class="8u">
+                    <section>
+                        <h2>About Us</h2>
+                        <a href="#" class="image fit"><img src="images/collector.jpg" alt="" /></a>
+                        <p>We are a team of developers and hobbyists with interests ranging from sports to fashion to
+                            technology. We created Collextion after realized the need for a space where collections
+                            could not only sell and trade but primarily to showcase. Of course there are other options
+                            out there but we wanted to make a website customized to the needs of collectors. </p>
+                    </section>
+                </div>
+                <div class="4u">
+                    <section>
+                        <h3>Privacy Policy</h3>
+                        <p>At Collextion, your privacy is important to us. Learn more about how we protect your privacy
+                        </p>
+                        <ul class="actions">
+                            <li><a href="#" class="button alt">Learn More</a></li>
+                        </ul>
+                    </section>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row double">
+                <div class="6u">
+                    <div class="row collapse-at-2">
+
+                        <div class="6u">
+                            <h2>Let's Connect</h2>
+                            <p></p>
+                            <ul class="icons">
+                                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    </footer>
+    <script src="/js/create-acct.js"></script>
+</body>
