@@ -30,5 +30,5 @@ module.exports = function (sequelize, DataTypes) {
     //     });
     //     // Collextor.belongsToMany( )
     // };
-    return Collector;
+    return Collectors;
 };
