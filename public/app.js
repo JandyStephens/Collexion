@@ -1,10 +1,10 @@
 //function to add in data will be changed from backend
 const fakeData = [{
     id: 'shoeCollec',
-    title: 'My Fancy Shoe Collection',
-    description: 'Something nice about shoes',
-    banner:'images/shoes1.jpg',
-    images: ['./images/5.jpg','./images/6.jpg','./images/7.jpg','./images/8.jpg','./images/9.jpg','./images/5.jpg','./images/5.jpg','./images/5.jpg']
+    title: 'My Christmas Sweater Collection',
+    description: 'I have been collecting these sweaters for 30 years! My grandma taught me to knit as a child and ever since I have been obsessed! I knit my own sweaters and in my free time I search thift shops, grabage cans and old attics for more! I am always looking to expand my collector, so send me any good sweaters you have! I would love to trade or buy any innovative sweaters you have!',
+    banner:'images/sweater1.jpg',
+    images: ['./images/sweater1.jpg','./images/sweater2.jpg','./images/sweater3.jpg','./images/sweater4.jpg','./images/sweater5.jpg','./images/sweater6.jpg','./images/sweater7.jpg','./images/sweater8.jpg']
 }]
 
 generateCollections();
