@@ -32,8 +32,12 @@
         <li><a href="/index.html">Home</a></li>
         <!-- <li><a href="/userIndex.html">My Collexions</a></li> -->
         <li><a href="/viewGlobal.html">Search Global Collexions</a></li>
-        <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
-            class="button special sign-out-btn" href="#modal1">Sign Out</button></li>
+
+        <!-- sign out button on my collections page -->
+        <li><a href="/auth/logout"><button onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;" class="button special sign-out-btn" href="#modal1">Sign Out</button></a></li>
+
+
         <style>
           /* Full-width input fields */
           input[type=text],
@@ -161,7 +165,7 @@
             }
           }
         </style>
-        <div id="id01" class="modal">
+        <!-- <div id="id01" class="modal">
 
           <form class="modal-content animate" action="/action_page.php" method="post">
             <div class="imgcontainer">
@@ -171,24 +175,24 @@
             </div>
 
             <div class="container">
-              <!-- <label for="uname"><b>Username</b></label> -->
+              <label for="uname"><b>Username</b></label>
               <input type="text" placeholder="Enter Username" name="uname" required>
 
-              <!-- <label for="psw"><b>Password</b></label> -->
+              <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Enter Password" name="psw" required>
 
               <button type="submit">Login</button>
-              <!-- <label>
+              <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label> -->
-            </div>
+              </label>
+            </div> -->
 
-            <!-- <div class="container" style="background-color:#f1f1f1 width: 40%;">
+        <!-- <div class="container" style="background-color:#f1f1f1 width: 40%;">
               <button type="button" onclick="document.getElementById('id01').style.display='none'"
                 class="cancelbtn">Cancel</button>
               <span class="psw">Forgot <a href="#">password?</a></span>
             </div> -->
-          </form>
+        </form>
         </div>
 
         <script>
@@ -383,12 +387,12 @@
     <a class='dropdown-trigger btn' href='#' data-target='dropfoo'>Drop Me!</a>
     
     <!-- Dropdown Structure -->
-              <ul id='dropfoo' class='dropdown-content'>
+              <!-- <ul id='dropfoo' class='dropdown-content'>
                 <li><a href="#!">one</a></li>
                 <li><a href="#!">two</a></li>
                 <li><a href="#!">three</a></li>
 
-              </ul>
+              </ul> -->
 
 
 
