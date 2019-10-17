@@ -12,6 +12,7 @@
   <script src="/js/skel-layers.min.js"></script>
   <script src="/js/init.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <noscript>
     <link rel="stylesheet" href="/css/skel.css" />
@@ -24,30 +25,45 @@
 <body id="top">
 
   <!-- Header -->
+  <!-- Header -->
   <header id="header" class="skel-layers-fixed">
-    <a href="#" class="navbar-left"><img src="images/bee-logo-collexion2.gif"></a>
+    <a href="#" class="navbar-left"><img src="images/bee-logo-collexion2.gif" id="bee-img"></a>
     <h1><a href="/index.html" id="collexionBar">Collexion</a></h1>
+    <br>
     <nav id="nav">
       <ul>
-        <!-- <li><a href="/index.html">Home</a></li> -->
-        <!-- <li><a href="/userIndex.html">My Collexions</a></li> -->
-        <li><a href="/viewGlobal.html">Search Global Collexions</a></li>
-
-        <!-- sign out button on my collections page -->
+        <li><input id="input_text" type="text" placeholder="search a collection"><a class="large material-icons"
+            href="viewGlobal.html">search</a></li>
+        <li><a href="userIndex.html">My Collexions</a></li>
+        <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+                        class="button special" href="#modal1">log In</button>
+                    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"
+                        class="button special" href="#modal1">Sign Up</button> -->
         <li><a href="/auth/logout"><button onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" class="button special sign-out-btn" href="#modal1">Sign Out</button></a></li>
-
-
         <style>
           /* Full-width input fields */
           input[type=text],
           input[type=password] {
-            width: 40%;
+            width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             box-sizing: border-box;
+          }
+
+          #nav {
+            text-align: left;
+          }
+
+          #bee-img {
+            height: 50px;
+            widows: 50px;
+          }
+
+          #input_text {
+            width: 300px;
           }
 
           /* Extra styles for the cancel button */
@@ -165,9 +181,11 @@
             }
           }
         </style>
-        <!-- <div id="id01" class="modal">
+        </head>
 
-          <form class="modal-content animate" action="/action_page.php" method="post">
+        <div id="id01" class="modal">
+
+          <form class="modal-content animate" action='/auth/login' method='POST'>
             <div class="imgcontainer">
               <span onclick="document.getElementById('id01').style.display='none'" class="close"
                 title="Close Modal">&times;</span>
@@ -175,43 +193,62 @@
             </div>
 
             <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
+              <!-- <label for="name"><b>Username</b></label> -->
+              <input type="text" placeholder="Enter Username" name="name" required>
+              <br>
+              <!-- <label for="password"><b>Password</b></label> -->
+              <input type="password" placeholder="Enter Password" name="password" required>
+              <br>
+              <button type="submit" class="sign-in-btn">Sign In</button>
+              <!-- <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label> -->
+            </div>
 
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-
-              <button type="submit">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div> -->
-
-        <!-- <div class="container" style="background-color:#f1f1f1 width: 40%;">
-              <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
-            </div> -->
-        </form>
+            <!-- <div class="container" style="background-color:#f1f1f1 width: 40%;">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel</button> -->
+            <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
         </div>
+        </form>
 
         <script>
           // Get the modal
           var modal = document.getElementById('id01');
-
+          var hello = document.getElementById('my-collexion');
           // When the user clicks anywhere outside of the modal, close it
           window.onclick = function (event) {
             if (event.target == modal) {
               modal.style.display = "none";
             }
           }
+
+
         </script>
       </ul>
+      <ul>
+        <li><a href="#">All</a></li>
+        <li><a href="#">|</a></li>
+        <li><a href="#">Achievements</a></li>
+        <li><a href="#">Art</a></li>
+        <li><a href="#">Books</a></li>
+        <li><a href="viewElectronics.html">Electronics</a></li>
+        <li><a href="#">Food & Drink</a></li>
+        <li><a href="#">Historical</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Toys</a></li>
+        <li><a href="#">Vehicles</a></li>
+        <li><a href="#">Other</a></li>
+      </ul>
     </nav>
+    </div>
   </header>
+
   <!--Sidebar w user info -->
   <div class="main-container">
     <div id="sidebar">
+      <br><br>
       <div id="sidebar__portrait">
         <img src="images/Tom.jpg" alt="Tom Image" />
       </div>
@@ -382,21 +419,21 @@
             <div class="container-create">
               <ul class="dDOptions">
                 <select>
-                <!-- <input type="dropdown"> -->
+                  <!-- <input type="dropdown"> -->
                   <!-- <optgroup label="Category "> -->
-                    <option value="" disabled selected>Select Category</option>
-                    <option>Electronics</option>
-                    <option>Fashion</option>
-                    <option>Toys</option>
-                    <option>Historical</option>
-                    <option>Vehicles</option>
-                    <option>Art</option>
-                    <option>Books</option>
-                    <option>Perishables</option>
-                    <option>Sports</option>
-                    <option>Music</option>
-                    <option>Achievements</option>
-                    <option>Other</option>
+                  <option value="" disabled selected>Select Category</option>
+                  <option>Electronics</option>
+                  <option>Fashion</option>
+                  <option>Toys</option>
+                  <option>Historical</option>
+                  <option>Vehicles</option>
+                  <option>Art</option>
+                  <option>Books</option>
+                  <option>Perishables</option>
+                  <option>Sports</option>
+                  <option>Music</option>
+                  <option>Achievements</option>
+                  <option>Other</option>
                   <!-- </optgroup> -->
                 </select>
               </ul>
@@ -444,6 +481,7 @@
       <ul id="grid" class="clr"></ul>
       <div id="slide-over">
         <div class="left">
+          <br><br><br>
           <a href="#">
             <div class="button">
               <p>CLOSE &gt;&gt;</p>
