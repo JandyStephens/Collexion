@@ -14,7 +14,12 @@ router.get("/", function (req, res) {
 
 //Route: loads user.html to display the user home page;
 router.get("/:username", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/userIndex.html"));
+    if (req.session.user) {
+
+        res.sendFile(path.join(__dirname, "../public/userIndex.html"));
+    } else {
+        res.redirect('/')
+    }
 });
 
 //Route： loads add.html to create new post.

@@ -70,13 +70,13 @@ router.post('/login', function (req, res) {
     })
 })
 
-
+//TODO: Jandy
 // $('.sign-out-btn').click(function (event) {
 //     event.preventDefault;
 router.get('/logout', function (req, res) {
     //delete session user, logging you out
     req.session.destroy(function () {
-        res.render('index')
+        res.redirect('/')
     })
 })
 // })
