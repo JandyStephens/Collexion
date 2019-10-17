@@ -12,6 +12,7 @@
   <script src="/js/skel-layers.min.js"></script>
   <script src="/js/init.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <noscript>
     <link rel="stylesheet" href="/css/skel.css" />
@@ -24,190 +25,228 @@
 <body id="top">
 
   <!-- Header -->
-  <header id="header" class="skel-layers-fixed">
-    <a href="#" class="navbar-left"><img src="images/bee-logo-collexion2.gif"></a>
-    <h1><a href="#" id="collexionBar">Collexion</a></h1>
-    <nav id="nav">
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <!-- <li><a href="/userIndex.html">My Collexions</a></li> -->
-        <li><a href="/viewGlobal.html">Search Global Collexions</a></li>
-        <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
-            class="button special sign-out-btn" href="#modal1">Sign Out</button></li>
-        <style>
-          /* Full-width input fields */
-          input[type=text],
-          input[type=password] {
-            width: 40%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-          }
+        <!-- Header -->
+        <header id="header" class="skel-layers-fixed">
+            <a href="#" class="navbar-left"><img src="images/bee-logo-collexion2.gif" id="bee-img"></a>
+            <h1><a href="/index.html" id="collexionBar">Collexion</a></h1>
+            <br>
+            <nav id="nav">
+                <ul>
+                    <li><input id="input_text" type="text" placeholder="search a collection"><a
+                            class="large material-icons" href="viewGlobal.html">search</a></li>
+                    <li><a href="userIndex.html">My Collexions</a></li>
+                    <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+                        class="button special" href="#modal1">log In</button>
+                    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"
+                        class="button special" href="#modal1">Sign Up</button> -->
+                    <style>
+                        /* Full-width input fields */
+                        input[type=text],
+                        input[type=password] {
+                            width: 100%;
+                            padding: 12px 20px;
+                            margin: 8px 0;
+                            display: inline-block;
+                            border: 1px solid #ccc;
+                            box-sizing: border-box;
+                        }
 
-          /* Extra styles for the cancel button */
-          .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-          }
+                        #nav {
+                            text-align: left;
+                        }
 
-          /* Center the image and position the close button */
-          .imgcontainer {
-            text-align: center;
-            /* margin: 24px 0 12px 0; */
-            position: relative;
-          }
+                        #bee-img {
+                            height: 50px;
+                            widows: 50px;
+                        }
 
-          img.avatar {
-            width: 40%;
-            border-radius: 50%;
-          }
+                        #input_text {
+                            width: 300px;
+                        }
 
-          .container {
-            padding: 16px;
-          }
+                        /* Extra styles for the cancel button */
+                        .cancelbtn {
+                            width: auto;
+                            padding: 10px 18px;
+                            background-color: #f44336;
+                        }
 
-          span.psw {
-            float: right;
-            padding-top: 16px;
-          }
+                        /* Center the image and position the close button */
+                        .imgcontainer {
+                            text-align: center;
+                            /* margin: 24px 0 12px 0; */
+                            position: relative;
+                        }
 
-          /* The Modal (background) */
-          .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-            padding-top: 60px;
-          }
+                        img.avatar {
+                            width: 40%;
+                            border-radius: 50%;
+                        }
 
-          /* Modal Content/Box */
-          .modal-content {
-            background-color: #000000;
-            margin: 5% auto 15% auto;
-            /* 5% from the top, 15% from the bottom and centered */
-            border: 1px solid black;
-            width: 40%;
-            /* Could be more or less, depending on screen size */
-          }
+                        .container {
+                            padding: 16px;
+                        }
 
-          /* The Close Button (x) */
-          .close {
-            position: absolute;
-            right: 25px;
-            top: 0;
-            color: #000;
-            font-size: 35px;
-            font-weight: bold;
-          }
+                        span.psw {
+                            float: right;
+                            padding-top: 16px;
+                        }
 
-          .close:hover,
-          .close:focus {
-            color: red;
-            cursor: pointer;
-          }
+                        /* The Modal (background) */
+                        .modal {
+                            display: none;
+                            /* Hidden by default */
+                            position: fixed;
+                            /* Stay in place */
+                            z-index: 1;
+                            /* Sit on top */
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            /* Full width */
+                            height: 100%;
+                            /* Full height */
+                            overflow: auto;
+                            /* Enable scroll if needed */
+                            background-color: rgb(0, 0, 0);
+                            /* Fallback color */
+                            background-color: rgba(0, 0, 0, 0.4);
+                            /* Black w/ opacity */
+                            padding-top: 60px;
+                        }
 
-          /* Add Zoom Animation */
-          .animate {
-            -webkit-animation: animatezoom 0.6s;
-            animation: animatezoom 0.6s
-          }
+                        /* Modal Content/Box */
+                        .modal-content {
+                            background-color: #000000;
+                            margin: 5% auto 15% auto;
+                            /* 5% from the top, 15% from the bottom and centered */
+                            border: 1px solid black;
+                            width: 40%;
+                            /* Could be more or less, depending on screen size */
+                        }
 
-          @-webkit-keyframes animatezoom {
-            from {
-              -webkit-transform: scale(0)
-            }
+                        /* The Close Button (x) */
+                        .close {
+                            position: absolute;
+                            right: 25px;
+                            top: 0;
+                            color: #000;
+                            font-size: 35px;
+                            font-weight: bold;
+                        }
 
-            to {
-              -webkit-transform: scale(1)
-            }
-          }
+                        .close:hover,
+                        .close:focus {
+                            color: red;
+                            cursor: pointer;
+                        }
 
-          @keyframes animatezoom {
-            from {
-              transform: scale(0)
-            }
+                        /* Add Zoom Animation */
+                        .animate {
+                            -webkit-animation: animatezoom 0.6s;
+                            animation: animatezoom 0.6s
+                        }
 
-            to {
-              transform: scale(1)
-            }
-          }
+                        @-webkit-keyframes animatezoom {
+                            from {
+                                -webkit-transform: scale(0)
+                            }
 
-          /* Change styles for span and cancel button on extra small screens */
-          @media screen and (max-width: 300px) {
-            span.psw {
-              display: block;
-              float: none;
-            }
+                            to {
+                                -webkit-transform: scale(1)
+                            }
+                        }
 
-            .cancelbtn {
-              width: 100%;
-            }
-          }
-        </style>
-        <div id="id01" class="modal">
+                        @keyframes animatezoom {
+                            from {
+                                transform: scale(0)
+                            }
 
-          <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="imgcontainer">
-              <span onclick="document.getElementById('id01').style.display='none'" class="close"
-                title="Close Modal">&times;</span>
-              <img src="images/bee-logo-collexion2.gif" alt="Bee" class="avatar">
+                            to {
+                                transform: scale(1)
+                            }
+                        }
+
+                        /* Change styles for span and cancel button on extra small screens */
+                        @media screen and (max-width: 300px) {
+                            span.psw {
+                                display: block;
+                                float: none;
+                            }
+
+                            .cancelbtn {
+                                width: 100%;
+                            }
+                        }
+                    </style>
+                    </head>
+
+                    <div id="id01" class="modal">
+
+                        <form class="modal-content animate" action='/auth/login' method='POST'>
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                    title="Close Modal">&times;</span>
+                                <img src="images/bee-logo-collexion2.gif" alt="Bee" class="avatar">
+                            </div>
+
+                            <div class="container">
+                                <!-- <label for="name"><b>Username</b></label> -->
+                                <input type="text" placeholder="Enter Username" name="name" required>
+                                <br>
+                                <!-- <label for="password"><b>Password</b></label> -->
+                                <input type="password" placeholder="Enter Password" name="password" required>
+                                <br>
+                                <button type="submit" class="sign-in-btn">Sign In</button>
+                                <!-- <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label> -->
+                            </div>
+
+                            <!-- <div class="container" style="background-color:#f1f1f1 width: 40%;">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel</button> -->
+                            <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+                    </div>
+                    </form>
+
+                    <script>
+                        // Get the modal
+                        var modal = document.getElementById('id01');
+                        var hello = document.getElementById('my-collexion');
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function (event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+
+
+                    </script>
+                </ul>
+                <ul>
+                    <li><a href="#">All</a></li>
+                    <li><a href="#">|</a></li>
+                    <li><a href="#">Achievements</a></li>
+                    <li><a href="#">Art</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Food & Drink</a></li>
+                    <li><a href="#">Historical</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Toys</a></li>
+                    <li><a href="#">Vehicles</a></li>
+                    <li><a href="#">Other</a></li>
+                </ul>
+            </nav>
             </div>
+        </header>
 
-            <div class="container">
-              <!-- <label for="uname"><b>Username</b></label> -->
-              <input type="text" placeholder="Enter Username" name="uname" required>
-
-              <!-- <label for="psw"><b>Password</b></label> -->
-              <input type="password" placeholder="Enter Password" name="psw" required>
-
-              <button type="submit">Login</button>
-              <!-- <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label> -->
-            </div>
-
-            <!-- <div class="container" style="background-color:#f1f1f1 width: 40%;">
-              <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
-            </div> -->
-          </form>
-        </div>
-
-        <script>
-          // Get the modal
-          var modal = document.getElementById('id01');
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function (event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          }
-        </script>
-      </ul>
-    </nav>
-  </header>
   <!--Sidebar w user info -->
   <div class="main-container">
     <div id="sidebar">
+      <br><br>
       <div id="sidebar__portrait">
         <img src="images/Tom.jpg" alt="Tom Image" />
       </div>
@@ -375,22 +414,27 @@
               <img src="images/bee-logo-collexion2.gif" alt="Bee" class="avatar">
             </div>
 
-            <div class="container">
-              <!-- <label for="categoryName"><b>Category</b></label> -->
-              <input type="text" placeholder="Enter Collexion Category" name="categoryName" required>
-              <!-- TODO: dropdown instead of text field
-    <label for="colImages"><b>Images</b></label>
-    <a class='dropdown-trigger btn' href='#' data-target='dropfoo'>Drop Me!</a>
-    
-    <!-- Dropdown Structure -->
-              <ul id='dropfoo' class='dropdown-content'>
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li><a href="#!">three</a></li>
-
+            <div class="container-create">
+              <ul class="dDOptions">
+                <select>
+                <!-- <input type="dropdown"> -->
+                  <!-- <optgroup label="Category "> -->
+                    <option value="" disabled selected>Select Category</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Toys</option>
+                    <option>Historical</option>
+                    <option>Vehicles</option>
+                    <option>Art</option>
+                    <option>Books</option>
+                    <option>Perishables</option>
+                    <option>Sports</option>
+                    <option>Music</option>
+                    <option>Achievements</option>
+                    <option>Other</option>
+                  <!-- </optgroup> -->
+                </select>
               </ul>
-
-
 
 
 
@@ -401,7 +445,7 @@
               <!-- <label for="bDes"><b>Give a Brief Description</b></label> -->
               <input type="text" placeholder="Enter a Brief Description" name="bDes" required>
               <br>
-              <button type="submit">Create Collection</button>
+              <button type="submit" class="create-btn">Create Collection</button>
             </div>
 
             <!-- <div class="container" width: 40%;">

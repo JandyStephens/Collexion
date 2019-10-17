@@ -37,7 +37,7 @@ router.post('/signup', function (req, res) {
         req.session.user = dbCollector;
         delete req.session.error
         // alert('You have sucessfully created an account!')
-        res.redirect('/myCollexions')
+        res.redirect('/' + dbCollector.name);
     })
 })
 
@@ -59,9 +59,8 @@ router.post('/login', function (req, res) {
             req.session.user = dbCollector;
             delete req.session.error
             // alert('You have sucessfully created an account!')
-            res.redirect('/myCollexions')
-        }
-        else {
+            res.redirect('/' + dbCollector.name);
+        } else {
             //delete existing user, add error
             req.session.user = false;
             req.session.error = 'Authorization failed.'
@@ -70,13 +69,13 @@ router.post('/login', function (req, res) {
     })
 })
 
-
+//TODO: Jandy
 // $('.sign-out-btn').click(function (event) {
 //     event.preventDefault;
 router.get('/logout', function (req, res) {
     //delete session user, logging you out
     req.session.destroy(function () {
-        res.render('index')
+        res.redirect('/')
     })
 })
 // })
