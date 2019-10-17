@@ -1,5 +1,6 @@
 var db = require('../models');
 
+// Create the categories;
 db.Category.findOrCreate({
     where: {
     category_name: 'achievements',
@@ -83,6 +84,9 @@ db.Category.findOrCreate({
     }
 });
 
+
+
+// Creat Collector;
 db.Collector.findOrCreate({
     where:{
         name:'aaaaandrew',

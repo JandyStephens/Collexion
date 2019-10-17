@@ -118,7 +118,6 @@ router.get("/keyword/:keyword", function (req, res) {
     db.Collections.findAll({
         where: {
             title: {$like: `%${req.params.keyword}%`}
-            // TODO: title contains keyword;
         },
         include: [db.Collectors]
     }).then(function (dbCollections) {

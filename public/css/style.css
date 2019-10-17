@@ -908,7 +908,7 @@ input[type="button"]:disabled,
 	background: black;
 	color: goldenrod;
 	cursor: default;
-	height: 3em;
+	height: 8em;
 	left: 0;
 	line-height: 3em;
 	position: fixed;
