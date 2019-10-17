@@ -1328,6 +1328,10 @@ input[type="button"]:active,
 
 /* Layout */
 
+.dDOptions {
+	color: rgb(104, 35, 35);
+}
+
 body {
 	position: absolute;
 	height: 100%;
@@ -1455,6 +1459,10 @@ a {
 	-ms-transition: transform 0.6s linear 0s, height 0s linear 0.6s;
 	-webkit-transition: transform 0.6s linear 0s, height 0s linear 0.6s;
 	transition: transform 0.6s linear 0s, height 0s linear 0.6s;
+}
+
+.slide-over-desc {
+	color: black
 }
 
 #slide-over:target {
